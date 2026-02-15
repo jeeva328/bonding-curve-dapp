@@ -39,5 +39,4 @@ jobs:
             docker rm bonding-curve-app || true
             docker run -d -p 3000:3000 \
               --name bonding-curve-app \
-              -e NEXT_PUBLIC_BSC_CHAIN_ID=${{ secrets.BSC_CHAIN_ID }} \
               ${{ secrets.DOCKER_USERNAME }}/bonding-curve-dapp:latest
