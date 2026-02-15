@@ -54,7 +54,7 @@ export default function PriceInfo() {
     functionName: 'totalSupply',
     query: {
       enabled: isConnected && !!contractAddress,
-      refetchInterval: 40000,
+      refetchInterval: 30000,
     }
   });
 
