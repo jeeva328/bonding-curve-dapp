@@ -142,7 +142,7 @@ export default function TradeTabs() {
       
       if (val && currentPrice) {
         const ethValue = parseFloat(val);
-        const priceInEth = parseFloat(formatEther(currentPrice));
+        const priceInEth = parseFloat(formatEther(currentPrice as bigint));
         const estimatedTokens = (ethValue / priceInEth).toFixed(6);
 
         setEstimateTokens(estimatedTokens);
@@ -159,7 +159,7 @@ export default function TradeTabs() {
       
       if (val && currentPrice) {
         const tokenValue = parseFloat(val);
-        const priceInEth = parseFloat(formatEther(currentPrice));
+        const priceInEth = parseFloat(formatEther(currentPrice as bigint));
         const estimatedEth = (tokenValue * priceInEth).toFixed(6);
         setEstimateBnb(estimatedEth);
       } else {
@@ -232,7 +232,7 @@ export default function TradeTabs() {
 
   const formatUserBalance = () => {
     if (!userTokenBalance) return "0.00";
-    return parseFloat(formatEther(userTokenBalance)).toFixed(4);
+    return parseFloat(formatEther(userTokenBalance as bigint)).toFixed(4);
   };
 
   const isBuyDisabled = !bnbAmount || parseFloat(bnbAmount) === 0 || isBuyPending || isBuyLoading || !isConnected || parseFloat(bnbAmount) > parseFloat(formatBalance(balance));

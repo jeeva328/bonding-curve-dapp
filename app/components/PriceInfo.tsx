@@ -76,7 +76,7 @@ export default function PriceInfo() {
     <Card sx={{ maxWidth: 345, mt: -30, ml: 6, boxShadow: 3 }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{ color: 'primary.main', fontWeight: 'bold' }}>
-          Bonding Curve Parameters
+          Bonding Curve Parameter
         </Typography>
         
         {!isConnected ? (
@@ -101,7 +101,7 @@ export default function PriceInfo() {
                 <Skeleton variant="text" width="60%" />
               ) : (
                 <Typography variant="body1" sx={{ color: 'success.main', fontWeight: 'bold' }}>
-                  {formatPrice(basePrice)} ETH
+                  {formatPrice(basePrice as bigint)} ETH
                 </Typography>
               )}
             </Box>
@@ -114,7 +114,7 @@ export default function PriceInfo() {
                 <Skeleton variant="text" width="60%" />
               ) : (
                 <Typography variant="body1" sx={{ color: 'info.main', fontWeight: 'bold' }}>
-                  {formatPrice(slope)} ETH
+                  {formatPrice(slope as any)} ETH
                 </Typography>
               )}
             </Box>
@@ -127,7 +127,7 @@ export default function PriceInfo() {
                 <Skeleton variant="text" width="80%" sx={{ bgcolor: 'rgba(255,255,255,0.3)' }} />
               ) : (
                 <Typography variant="h6" sx={{ color: 'primary.contrastText', fontWeight: 'bold' }}>
-                  {formatPrice(currentPrice)} ETH
+                  {formatPrice(currentPrice as any)} ETH
                 </Typography>
               )}
             </Box>
@@ -140,7 +140,7 @@ export default function PriceInfo() {
                 <Skeleton variant="text" width="70%" sx={{ bgcolor: 'rgba(255,255,255,0.3)' }} />
               ) : (
                 <Typography variant="body1" sx={{ color: 'secondary.contrastText', fontWeight: 'bold' }}>
-                  {formatSupply(totalSupply)} Tokens
+                  {formatSupply(totalSupply as any)} Tokens
                 </Typography>
               )}
             </Box>
